@@ -1,0 +1,142 @@
+Welcome back in all the task.
+Prior to this, we were working on preparing our data so that
+we could run Auto ML on it.
+We are now at the stage where we can run a Jewel Auto ML
+functionality on our data tables.
+All right, so to do that, we first need to import the auto ML
+class from a short term ill.
+So let's go ahead and do that.
+Just make sure to spell this right age to honour.
+Capitalize.
+So is a in auto, and finally M and L are also capitalized
+and then press shift enter to go ahead and import this class
+or module.
+And now we can run auto m O.
+And to do  that, we first need to specify a few parameters.
+So when you run Auto ML, it will train various models
+like General Linear models, Gail Emms R F random Forests,
+Grady Int boosted machines, G.
+B M's an extra boost and deep neural networks and finally
+stocked ensembles.
+Auto. Emma will stop after one hour unless you change
+this parameter called Max.
+Underscore runtime underscore seconds.
+So let's before I describe all the arguments to you, let's go
+ahead and start writing code for it.
+So we are going to run this class that we just imported Two
+instance She ate our actual auto ml close, All right.
+And the default time for any training process with a show
+auto, Mel is 3600 seconds, which corresponds to a max run
+time of one hour.
+Since we don't have the luxury of time in this project, what
+we're going to do is capped the runtime.
+So Max, underscore runtime underscore seconds is going to be
+600. So let's just keep it at ah, relatively, a short
+duration, which is 10 minutes.
+And here are some other parameters.
+All right, so let's get on with the rest of the parameters.
+So one of them is called exclude Underscore Ale gos, which is
+excluding certain algorithms from the automobile process.
+So say you have some sort of data and you know that deep
+learning models will not work well on them.
+And in that case, you can specify this exclude Al goes
+parameter and within a list, you would type in something like
+deep learning, which is the name for the algorithm initial
+autumn L.
+But right now we want to include all of the algorithms.
+So I'm just pointing this out as as a fact.
+And, ah, to ensure reproduce ability, we can set the seat to
+one. But this actually is redundant because when you have Max
+runtime seconds here and this is runtime, so there's an E.
+So when you specify Max run times, what happens is that the
+run the training run is not reproducible because the system
+resource is at a particular run differ from time to time.
+So, uh, when you're running this in, um, you're your own time
+for your own project or at work instead of Max runtime sec
+seconds.
+You can set this parameter called Max, underscore models and
+specify something like 20 or 50 models.
+And, ah, the training time will time out in about 3600
+seconds or max about one hour.
+All right, so for now we're just going with Max runtime
+seconds.
+And let's we could also, uh, pass in a metric called We could
+pass in a metric to stop the training process.
+So there's It's an analog of early stopping if you're used to
+using caress and neural networks, and that a p I.
+So you don't want the algorithm to over fit on your data.
+So you monitor some metrics, a log loss for binary
+classification or the area under the iro C curve.
+And you can say that if this metric doesn't improve for a
+certain number of training, it rations.
+We can stop the training for this algorithm and move on to
+the next model.
+So that argument would be stop stopping underscore Metric.
+And there are various metrics that that are part of auto H
+issue auto.
+Mel and I encourage you to read through the documentation to
+find out what works best for you.
+And there's also another parameter called sort underscore
+metric that sorts the leader board of all the various models
+based on the metric that you specify.
+But today we are just going to specify, um, this argument
+called balance underscore classes and set this to true.
+So let's understand why I'm doing this.
+So let's look at the term deposit, which is our response
+variable from the original data frame DF and look a tw the
+data distribution so we can use the value, underscore
+accounts, function from pandas and you'll see that we have a
+severe class imbalance problem, so H two autumn l can take
+care of that for us.
+When we specify balance, underscore classes parameter and set
+that to truth.
+It'll either under sample the majority class are over.
+Sample the minority class or use techniques like smote to
+balance out the classes.
+And finally, you can specify a parameter.
+This is optional because the project a name, is set by
+default.
+But if you want to add more models after another iteration of
+training to the same project, you can just use the same
+project name.
+And before we forget, let's go ahead and add are stopping
+metric.
+It was a stopping underscore metric, and let's set this to
+log loss for binary classification.
+But you could also set this to a U.
+C or something else, but just so that it's reproducible.
+Let's type the same things.
+And also let's set the seed parameter to be one, so this will
+just ensure that the splits used are the same, but it won
+guarantee that we get the same results on the leader board.
+All right, so now that we have in Stan Shih ated h two autumn
+L. It's time to start training.
+And let's also time how long this auto ML process takes so we
+can use the time sell magic from Jupiter Lab and time the
+training process.
+So we just type in aml dot train.
+And here the X and Y are just the column names or indices.
+So we've already created this in the previous time, So X
+equals X.
+Why equals y?
+And now we need to provide the the training frame for auto M
+O training.
+Underscore frame equals train.
+And to start the training process, we can just simply hit,
+shift and enter.
+So if you see a syntax, air like this is probably a typo, and
+here I can debug this live and say I missed a comma there, so
+I'll put that back in and hit shift, enter and you'll start
+seeing this Progress bar, and over time it's going to expand
+horizontally so the entire training process will take about
+10 minutes to complete, and in the meantime, you can feel
+free to take a break if you want.
+But please make sure not to close the Rhyme browser tab or
+leave it idle for 10 minutes.
+straight.
+It can sometimes shut down if not active for 10 minutes, so
+please make sure to check back in after five minutes.
+And once the training is complete, you will see the Progress
+bar is at 100% and you'll also see a numerically 100% printed
+out. And once it's done, joined me in the next task to
+inspect the train models from the Auto Ml leaderboard.

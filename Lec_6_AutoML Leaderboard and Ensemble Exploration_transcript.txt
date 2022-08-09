@@ -1,0 +1,116 @@
+Back. Hopefully, your model also took around 9 to 10 minutes
+to complete training, and you'll know that it has completed
+because you will see this output here showing you
+the execution time as well as the Progress Bar reaching 100%.
+And the auto ML object actually includes a leader board
+of models that were trained in the process, including
+the fivefold cross validated model performance.
+And this is by default.
+So let's go ahead and view the Auto ML leaderboard,
+since we did not specify a leader board.
+Underscore frame object in insured out auto Mel um,
+for scoring and ranking the models.
+The autumn a leaderboard uses the cross validation metrics
+to rank the models.
+A default performance metric for each machine learning task
+say binary classification, multi class classification
+or regression is specified internally, and the leader board
+will be sorted by that metric.
+In the case of binary classification, the default ranking
+metric for the leaderboard is the area under the R O.
+C curve, or its alternatively called the You See.
+So let's view the auto ml leaderboard, so this is just a
+dashboard of all the train models, along with their scores
+and they're sorted by a particular metric, which, by default
+for binary classification tasks is tthe e a UC access the
+leader board like so And no, let's, uh, take a look at the
+leaderboard, which is just greater frame or, uh uh to be
+technically correct.
+It's just an H 20 frame.
+Let's take a look at all the entries here, and so by
+default, shows you the first pen models.
+But we may have more than 10 models.
+We are not sure yet, so let's pass in the Roads column and
+will be dot enrolled.
+So this will show all the rose from the auto Emma leaderboard
+instead of the default 10 rules.
+All right, so once you've type us in, refer to hit, shift and
+enter, and this is what you're going to see on your screen or
+the order of these might be slightly different.
+But I can bet that you'll have one of the stocked sacked
+ensemble models as the winner.
+So you might have either the all models stocked ensemble or
+the best of family stocked ensemble as as the winner.
+Okay, so when we look at the leaderboard, we see we have a
+model I D column.
+And then there are metrics that represent the cross validated
+performance of each of the models.
+So what you see now is that the stock stacked ensemble, best
+of family, um, models is winning with the A U C of 0.934533
+But and this is usually what we see.
+It's not always the case that the leaderboard looks like
+this, but typically we see that the stock ensemble, all
+models or best of family models is winning with the other
+ensemble model slightly lagging behind.
+Okay, so most of what we've done so far is what you would do
+typically in Auto ml to make it more interesting.
+Let's look a little bit into ah, what the stacked ensemble is
+actually doing.
+So this, in your case, could be the stacked ensemble.
+Ah, all models or it could be best of family and my screen.
+It's best of family, so I'm going to assume that that's the
+best model that my training has found.
+It could be different for you.
+All right, so now we get the, uh, the best model from the
+stock ensemble model and the way to do that is we can get the
+best on ensemble from the leaderboard.
+I've been ml brought leader and we get the best model,
+which, in my case, is the best of family abstract ensemble.
+And now we can get the metal learner model for the stacked
+ensemble.
+Oh, uh, at Underscore model And yet the metal earner, We just
+take our model, which is currently S E stock Ensemble, and we
+type in a metal learner, followed by this name.
+Here we go.
+This is going to give us the metal.
+Lerner writes, Hit, shift, enter.
+And now we can look at the variable importance for the meta
+learning algorithm inside of the stock ensemble so we can
+pipe in meta learner.
+But you are I m p and just can enter.
+So what does this mean?
+So the metal earner is the name of the algorithm whose goal
+it is to take predictions from the base models and to predict
+the outcome.
+So the features in the metal earner are actually the
+predictions from the base model.
+So here the features represent each of the models that are in
+the stacked ensemble.
+What this shows is how each of these based learners, how
+important each of these baseliners is to the ensemble.
+So here we see that the most important based learner is X G
+boost, with a coefficient of 0.89 followed by its shores.
+Implementation of creating boosting machines, G B M.
+And then there's also deep learning and distributed random
+forests.
+And at the bottom you will see what models are not doing
+really well.
+So here we see that the G l A models or General linear models
+other male model isn't doing really well.
+And the good thing is that these models will be completely
+ignored by the ensemble.
+And you can tell, because here the coefficients are set to
+zero. So the lesson here is that you don't have to sit down
+and pick apart which model should go into the ensemble.
+You can give it bad models, and it will ignore them.
+And so the goal of the meta learner is to ignore everything
+that's not important.
+And that's basically what you see here.
+So it's really interesting to look at the stock ensembles and
+see how it's evaluating the models itself.
+But then one thing we might want to look into is the regular
+variable importance on the original training itself by
+looking at perhaps one of the most important based learners.
+So let's do that in the next task, where we pick apart this a
+stocked ensemble and go a little deeper and look into what
+variables the extra boost model considers most important.

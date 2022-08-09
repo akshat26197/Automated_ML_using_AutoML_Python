@@ -1,0 +1,157 @@
+Hi there.
+Welcome to this.
+Hands on project on Automatic Machine Learning with H
+20 audio ML.
+By the time you complete this project, you will be able
+to explain what automatic machine learning is and perform
+automatic machine learning with H 20 audio, ml and Python
+and finally apply H two autumn L to a business and marketing
+analytics problem.
+Let me quickly show you the business analytics problem
+we are going to be working with today.
+So this spreadsheet that you see here contains information
+about direct marketing campaigns of a Portuguese bank
+to clients.
+The marketing campaigns were based on phone calls and emails.
+So the company doing the marketing here is a bank or banking
+institution, and what they were trying to do was to measure
+and predict the enrolment of clients in one of their products
+called term deposits.
+You can see they have a bunch of different features and data
+that they collected on all their customers, and what
+they were trying to do is to see whether or not their
+customers were enrolling in that product called a term
+deposit.
+So with that in mind, we are going to use a very popular
+machine learning platform called H 20 and it's tool called
+Auto ML, to predict whether or not customers will enroll
+in this banks product, which is a term deposit.
+If you're not familiar with H 20 and actual auto ml, let's go
+over a presentation or rather, a slide deck from the chief
+machine learning scientists at Actual, whose name is Aaron.
+So here it says that it's Chuo is an open source distributed
+machine learning platform with implementations of cutting
+edge ml algorithms.
+And while the core algorithms are written in high performance
+Java H. Roe has APIs available in our python and scaler
+and even a Web GUI where you can do all the machine
+learning through a GUI.
+But today we are going to use a chose python, API and tools
+like pandas for data manipulation.
+And here's how I think about automated machine learning,
+so it's a kind.
+It's kind of the same way you think about machine learning
+and data science, work flows in general and the automation
+of those parts.
+So there's certain aspects of data preparation
+that can be done automatically, and we'll go more into detail
+later in the project.
+Then there's anything that anything to do with generating
+models.
+This is something you really want to automate,
+because if you're doing it manually, it can take a very long
+time and a lot of expertise to figure out which models
+are trained and how to evaluate them.
+And another very important aspect to consider when thinking
+about automatic machine learning is what is really the goal
+of automatic machine learning.
+For me, at least, the goal is to find the best possible model
+in the least amount of time or the least amount of effort.
+Some of you might have different goals like, say, I want the
+most interpretable model or something like that.
+But for now, let's focus on the goal of getting the best
+model. So if you want to get the best model, the solution is
+almost always using ensembles With Auto ML, you
+can either focus on individual models or you can say your
+goal is to get the best model regardless of the complexity.
+And for any of you have participated in kagle and chemical
+competitions, you would know that every Kagle competition is
+one by an ensemble of some sort.
+And what an ensemble means, if you're not familiar, is just
+taking a group of models and combining them together somehow
+to get a better model than you would compared to any
+of the individual ones.
+So in terms of Auto ML, this is a pretty generic term.
+There's a lot of people using it in a lot of different ways.
+So too ambiguous.
+The term the chief machine learning scientists at H 20 Aaron
+put together a blog post that I highly recommend you check
+out its you confined this over in the project.
+Overview reading.
+It's important to understand what auto mail means
+because there are companies like Google, for example, who
+have something they call Auto Ml.
+And it's very different from what most of the auto Emma world
+has been working on.
+So you can think about automobile being split into two worlds.
+There's one like with Google, where auto ML is used on
+complex data like images or video or text, and then you would
+use a deep learning approach and what the goal with Autumn
+all there is to automate the architecture search of neural
+networks and their hyper parameters and for every other type
+of data.
+So more tabular data, like most businesses, work with your
+dealing with sort of like the equivalent of a spreadsheet or
+a table where their numbers and categorical data so probably
+what you're more used to.
+So that would be the other type of auto Mel I'm talking about
+today. And that could involve any or all of the machine
+learning algorithms that you're familiar but like random for
+us. Radiant boosted machines, linear models.
+And you can even use deep learning to clarify.
+But what I want to say is that we're talking about tabular
+data that looked like spreadsheets and probably 99% of the
+machine learning that's being applied in business cases right
+now is on tabular data.
+So what is H 20 auto amount for data pre processing?
+Here's what we'd consider aspect of automatic machine
+learning things like data amputation, dealing with missing
+values.
+One hot encoding, normalizing or standardizing your data an
+issue. AutoML takes care of all of this for you.
+You don't even have to convert your categorical or factor
+data into one hot encoded representations.
+So once you're done with data prep.
+There are different ways to train models and, ah, issue Auto
+ML does grid search or random search, which is what most of
+you may be familiar with.
+Essentially, the idea is that you have some hyper parameters
+for various families of models, and the goal is to find
+those values that give you the best model.
+So here in this light, is an overview of issue Autumn L in
+the current stable release.
+So we have all the basic pre processing, and then you trained
+random grids of all the ML algorithms like G B. M's,deep
+neural networks, general linear models, XGboost.
+And then we individually tune the models.
+And once you have the models, AutoML trains 2-stacked
+ensembles at the end, and once auto ml, the autumn of process
+is complete, Itcho gives us a lead herbal leaderboard.
+Sorry, which is just a ranking of all the models.
+Based on cross validation performance.
+It would be ranked by some default metric, but you can always
+switch what the metric is like Ah, perhaps log loss or AUC  for binary classification, for example, and then, since
+these are a stroll models that can easily be exported to
+production, including ensembles.
+So I hope you now have a general understanding of automatic
+machine learning and what it is and what a true auto Mel does.
+That's at the prerequisites for this project are that you
+have prior programming experience in Python and are familiar
+with writing code for machine learning.
+In Python, for example, with a library like psychic learn, we
+will not be talking about things like how linear models work
+or how random forests work or the theory or math behind them.
+Instead, we assume you have prior experience with machine
+learning and want to learn how to use H 20 for auto M o.
+So that way, with auto mou conspire your time on data
+preparation and feature engineering and advanced feature
+engineering to give your models and edge.
+And once you have prepared your data into a tabular format,
+Huml can take care of the modeling and hyper parameter
+optimization for you.
+Okay, so that was a lot of talking for me.
+And I assure you that for the rest of the project, you and I
+will be writing ah, lot of code in a very hands on fashion
+and now that you have a general overview, joined me in the
+next house to get familiar with the Rhyme interface and also
+the data that we're going to be using today.
